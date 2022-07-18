@@ -2,7 +2,7 @@
 import pandas as pd
 import os
 from tkinter import filedialog
-import dill
+#import dill
 import numpy as np
 
 def p(aaarg):
@@ -27,13 +27,13 @@ def pdopenfail(path=""):
         return pd.read_csv(path)
     if path[len(path) - 4:] == "xlsx" or path[len(path) - 3:] == "xls" or path[len(path) - 4:] == "xlsm":
         return pd.read_excel(path)
-def snl_session(fn="savedsession.pkl"):
-    if os.path.exists(fn):  # os.path.isfile() if needed to check this folder or file
-        dill.load_session(fn)
-        print('session loaded')
-    else:
-        dill.dump_session(fn)
-        print('session saved')
+# def snl_session(fn="savedsession.pkl"):
+#     if os.path.exists(fn):  # os.path.isfile() if needed to check this folder or file
+#         dill.load_session(fn)
+#         print('session loaded')
+#     else:
+#         dill.dump_session(fn)
+#         print('session saved')
 
 vf = pdopenfail()
 
